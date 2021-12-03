@@ -1,0 +1,129 @@
+$table_bg: transparent;
+$table_active_color: #5c5776;
+$table_active_bg: #f5f4f8;
+$table_hover_bg: rgba(245, 244, 248, 0.7);
+$table_border: #ecebf1;
+
+.table {
+  white-space: nowrap;
+  margin-bottom: 0;
+  border-color: $table_border;
+  color: $table_active_color;
+  margin-bottom: 1rem;
+  vertical-align: top;
+  width: 100%;
+  thead {
+    vertical-align: bottom;
+    color: var(--black);
+    border: 0 solid #dddcdf;
+    th {
+      border: 0;
+      text-transform: uppercase;
+      color: $table_active_color;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-align: left;
+      letter-spacing: 1px;
+    }
+  }
+
+  tbody {
+    td {
+      border-top: 0;
+      h5 {
+        font-size: 0.875rem;
+        margin-bottom: 0.25rem;
+      }
+
+      a {
+        &:hover .text_pri_hov {
+          color: #754ffe !important;
+        }
+      }
+    }
+    &:not(caption) > * > * {
+      background-color: $table_bg;
+    }
+  }
+}
+
+.text_pri_hov {
+  transition: all 0.1s ease-in;
+}
+
+.table > :not(caption) > * > * {
+  background-color: $table_active_bg;
+  border-bottom-width: 1px;
+  box-shadow: inset 0 0 0 9999px $table_bg;
+  padding: 0.75rem 1.5rem;
+}
+
+.table > tbody {
+  vertical-align: inherit;
+}
+.table > :not(:first-child) {
+  border-top: 2px solid $table_border;
+}
+
+.text_inherit {
+  color: #18113c;
+}
+
+.d_lg {
+  align-items: center;
+  @media (min-width: 992px) {
+    display: flex;
+  }
+}
+
+.img_rounded {
+  img {
+    width: 6.5rem;
+    border-radius: 0.25rem;
+  }
+}
+
+.spacing {
+  margin-top: 0.5rem;
+  @media (min-width: 992px) {
+    margin-top: 0 !important;
+    margin-left: 1rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    color: #949296;
+    font-size: 13px;
+  }
+}
+
+.align_middle {
+  vertical-align: middle;
+}
+
+.d_flex {
+  display: flex;
+  align-items: center;
+}
+
+.badge_dot {
+  border-radius: 50%;
+  display: inline-block !important;
+  font-size: 0;
+  height: 0.5rem;
+  line-height: 1;
+  padding: 0;
+  vertical-align: middle;
+  width: 0.5rem;
+  margin-right: 0.25rem;
+}
+
+.bg_grey {
+  background-color: #e8e7ed;
+}

@@ -1,0 +1,30 @@
+.small {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #5c5776;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 0.2rem;
+  font-size: 0.765625rem;
+  padding: 0.5rem 0.875rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+}
+
+.grey {
+  border-color: #e8e7ed;
+  color: #5c5776;
+  &:hover {
+    background-color: #f5f4f8;
+    border-color: #beb9cd;
+    color: #5c5776;
+  }
+}

@@ -8,9 +8,12 @@ $body_weight: 400;
 $body_line_height: 1.5;
 $primary: #754ffe;
 $white: #fff;
+$black: #000;
+
 :root {
   --primary: #{$primary};
   --white: #{$white};
+  --black: #{$black};
 }
 
 *,
@@ -35,6 +38,10 @@ body {
 a {
   color: $primary;
   text-decoration: none;
+}
+
+a:hover {
+  color: #5e3fcb;
 }
 
 img,
@@ -77,6 +84,21 @@ h6 {
 p {
   margin-bottom: 1rem;
   margin-top: 0;
+}
+
+table {
+  border-collapse: collapse;
+  caption-side: bottom;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border: 0 solid;
+  border-color: inherit;
 }
 
 .main_wrapper {
@@ -187,4 +209,93 @@ p {
     margin-bottom: 0;
     font-weight: 700;
   }
+}
+
+.card {
+  word-wrap: break-word;
+  background-clip: border-box;
+  background-color: #fff;
+  border: 0;
+  box-shadow: 0 1px 3px rgba(3, 0, 71, 0.09);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.p_4 {
+  padding: 1.5rem;
+}
+
+.form_control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: $white;
+  border: 1px solid #e8e7ed;
+  border-radius: 0.25rem;
+  color: #18113c;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+  padding: 0.75rem 1.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 100%;
+  &:focus {
+    background-color: $white;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba(231, 225, 253, 0.02);
+    color: #18113c;
+    outline: 0;
+  }
+  &::placeholder {
+    color: #a8a3b9;
+  }
+}
+
+.table_responsive {
+  border: 0;
+  overflow-x: auto;
+  display: block;
+  transition: opacity 0.15s linear;
+}
+
+.card_footer {
+  background-color: $white;
+  border-top: 0;
+  padding: 1rem 1.5rem;
+  &:last-child {
+    border-radius: 0 0 calc(0.5rem - 1px) calc(0.5rem - 1px);
+  }
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.page_link {
+  background-color: $white;
+  border: 1px solid #ecebf1;
+  color: #5c5776;
+  display: block;
+  position: relative;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  padding: 0.5rem 0.925rem;
+}
+
+.mx_1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }

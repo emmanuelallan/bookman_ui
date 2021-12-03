@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.search_icon {
+  padding-left: 1rem;
+  position: absolute;
+}
+
+.ps {
+  padding-left: 2.5rem;
+  outline-offset: -2px;
+  -webkit-appearance: textfield;
+}

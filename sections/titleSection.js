@@ -1,4 +1,4 @@
-import Button from '../components/buttton/button';
+import Button from '../components/button/button';
 
 export default function TitleSection({ title, path, color, value, icon }) {
   return (
@@ -8,7 +8,7 @@ export default function TitleSection({ title, path, color, value, icon }) {
           <div className="mdb">
             <h1>{title}</h1>
           </div>
-          <div style={{ position: 'relative', zIndex: -1 }}>
+          <div>
             <Button link={path} color={color} title={value} icon={icon} />
           </div>
         </div>

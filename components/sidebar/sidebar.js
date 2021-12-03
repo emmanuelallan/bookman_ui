@@ -22,7 +22,7 @@ export default function SideBar({ toggled }) {
               <Image
                 src="/img/bookman_logo.svg"
                 alt="BookMan Logo"
-                width={108}
+                width={150}
                 height={30}
                 className={styles.logo}
               />
