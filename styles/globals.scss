@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-$body_bg: #f4faf8;
+$body_bg: #f5f4f8;
 $body_color: #5c5776;
 $body_font: 'Inter', sans-serif;
 $body_font_size: 0.875rem;
 $body_weight: 400;
 $body_line_height: 1.5;
 $primary: #754ffe;
+$white: #fff;
 :root {
   --primary: #{$primary};
+  --white: #{$white};
 }
 
 *,
@@ -82,6 +84,17 @@ p {
   overflow-x: hidden;
 }
 
+.main_wrapper.toggled .toggled {
+  margin-left: 0;
+}
+
+.main_wrapper.toggled .toggled_1 {
+  margin-left: 0;
+  @media (min-width: 768px) {
+    margin-left: -16rem;
+  }
+}
+
 .navbar {
   align-items: center;
   display: flex;
@@ -108,5 +121,70 @@ p {
   @media (min-width: 768px) {
     min-width: 0;
     width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+.container_fluid {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(1.5rem * -0.5);
+  margin-right: calc(0 * -0.5);
+  margin-top: calc(0 * -1);
+}
+
+.row > * {
+  flex-shrink: 0;
+  margin-top: 0;
+  max-width: 100%;
+  padding-left: calc(1.5rem * 0.5);
+  padding-right: calc(1.5rem * 0.5);
+  width: 100%;
+}
+
+.col_12 {
+  flex: 0 0 auto;
+  width: 100%;
+  @media (min-width: 768px) {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  @media (min-width: 992px) {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+.border {
+  display: flex;
+  border-bottom: 1px solid #ecebf1;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.mdb {
+  margin-bottom: 1rem;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    font-weight: 700;
   }
 }

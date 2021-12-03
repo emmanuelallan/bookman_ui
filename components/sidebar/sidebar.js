@@ -1,12 +1,19 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import styles from './sidebar.module.scss';
 import { navLinks } from './data';
 
-export default function SideBar() {
+export default function SideBar({ toggled }) {
+  const router = useRouter();
+  const pathname = router.pathname.replace('/', '');
   return (
-    <nav className={`${styles.navbar_vertical} navbar`}>
+    <nav
+      className={`${styles.navbar_vertical} navbar ${
+        toggled ? 'toggled_1' : ''
+      }`}
+    >
       <div className={styles.slim_scroll_div}>
         <div className={styles.nav_scroller}>
           {/* logo */}
@@ -29,7 +36,12 @@ export default function SideBar() {
             </li>
 
             {navLinks.map((link, index) => (
-              <li key={index} className={styles.nav_item_h}>
+              <li
+                key={index}
+                className={`${styles.nav_item_h} ${
+                  pathname === link.title && styles.active
+                }`}
+              >
                 <Link href={`/${link.title}`}>
                   <a className={styles.nav_link}>
                     <i className={`${styles.nav_icon} ${link.icon}`} />{' '}

@@ -97,6 +97,14 @@ $dark_nav: #18113c;
   transition: all 0.1s ease-in-out;
 }
 
+.active {
+  background: rgba(155, 129, 250, 0.062);
+}
+
+.active a {
+  color: var(--white);
+}
+
 .nav_item_h:hover {
   background: rgba(117, 79, 254, 0.11);
 }

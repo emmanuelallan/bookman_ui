@@ -1,3 +1,7 @@
-export default function Main({ children }) {
-  return <main className="main_wrapper">{children}</main>;
+export default function Main({ toggled, children }) {
+  return (
+    <main className={`main_wrapper ${toggled ? 'toggled' : ''}`}>
+      {children}
+    </main>
+  );
 }
