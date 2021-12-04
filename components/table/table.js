@@ -11,8 +11,9 @@ export default function Table() {
         <tr>
           <th scope="col">Books</th>
           <th scope="col">Author</th>
+          <th scope="col">Quantity</th>
           <th scope="col">Status</th>
-          <th scope="col">Actions</th>
+          <th scope="col">Pdf</th>
           <th scope="col">More</th>
         </tr>
       </thead>
@@ -37,7 +38,12 @@ export default function Table() {
                     <span className={styles.text_inherit}>
                       Added On 7 Dec, 2021
                     </span>
-                    <p>Quantity: 120, Sales: KES. 32,000</p>
+                    <p>
+                      <span
+                        className={`${styles.badge_dot} ${styles.bg_success}`}
+                      />{' '}
+                      On Sale
+                    </p>
                   </div>
                 </div>
               </a>
@@ -51,10 +57,16 @@ export default function Table() {
           </td>
 
           <td className={styles.align_middle}>
+            <div className={styles.d_flex}>
+              <h5>300</h5>
+            </div>
+          </td>
+
+          <td className={styles.align_middle}>
             <span className={`${styles.badge_dot} ${styles.bg_grey}`} />
             Sold Out
           </td>
-          <td className={styles.align_middle}>Text</td>
+          <td className={styles.align_middle}>200KB</td>
           <td className={styles.align_middle}>
             <Actionbtn
               path="/edit"
