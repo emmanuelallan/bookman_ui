@@ -1,0 +1,24 @@
+.mb_mt {
+  margin-bottom: 1rem;
+}
+
+.col_6 {
+  @media (min-width: 768px) {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+.col_9 {
+  @media (min-width: 768px) {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+}
+
+.col_4 {
+  @media (min-width: 768px) {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+}

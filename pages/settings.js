@@ -6,7 +6,7 @@ export default function Settings() {
     <Layout>
       <TitleSection
         title="Settings"
-        color="dark"
+        color="secondary"
         value="Logout"
         path="#"
         icon="ri-logout-circle-r-line"

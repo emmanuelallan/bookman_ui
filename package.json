@@ -8,9 +8,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "filepond": "^4.30.3",
+    "filepond-plugin-image-exif-orientation": "^1.0.11",
+    "filepond-plugin-image-preview": "^4.6.10",
     "next": "12.0.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-filepond": "^7.1.1",
     "remixicon": "^2.5.0",
     "sass": "^1.44.0",
     "swr": "^1.1.0"
