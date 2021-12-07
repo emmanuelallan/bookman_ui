@@ -263,6 +263,56 @@ tr {
   transition: opacity 0.15s linear;
 }
 
+.table {
+  border-color: #ecebf1;
+  color: #5c5776;
+  margin-bottom: 1rem;
+  vertical-align: top;
+  width: 100%;
+}
+
+.table > thead {
+  vertical-align: bottom;
+}
+
+.table-bordered > :not(caption) > * {
+  border-width: 1px 0;
+}
+
+.table > :not(caption) > * > * {
+  background-color: transparent;
+  border-bottom-width: 1px;
+  box-shadow: inset 0 0 0 9999px transparent;
+  padding: 0.75rem 1.5rem;
+}
+
+.table-bordered > :not(caption) > * > * {
+  border-width: 0 1px;
+}
+
+.table thead th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.table > :not(:first-child) {
+  border-top: 2px solid #ecebf1;
+}
+
+.table > tbody {
+  vertical-align: inherit;
+}
+
+.border_primary {
+  border-color: #754ffe !important;
+}
+
+.text_nowrap {
+  white-space: nowrap !important;
+}
+
 .card_footer {
   background-color: $white;
   border-top: 0;
@@ -366,4 +416,143 @@ tr {
 
 small {
   font-size: 0.875em;
+}
+
+.col_8 {
+  flex: 0 0 auto;
+  width: 100%;
+  @media (min-width: 768px) {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  @media (min-width: 1200px) {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+}
+
+.col_4 {
+  flex: 0 0 auto;
+  width: 100%;
+  @media (min-width: 768px) {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  @media (min-width: 1200px) {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+}
+
+.mb_4 {
+  margin-bottom: 1.5rem;
+}
+
+.d_between {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.text_left {
+  text-align: left;
+}
+
+.m_left {
+  margin-left: 1.25rem;
+}
+
+.price {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  color: rgb(24, 17, 60);
+  font-weight: 600;
+}
+
+.detail {
+  i {
+    font-size: 24px;
+  }
+
+  .de {
+    font-size: 0.875rem;
+    color: #5c5776;
+  }
+}
+
+.p_4 {
+  padding: 1.5rem;
+}
+
+.h1 {
+  font-size: 2rem;
+}
+
+.fw_bold {
+  font-weight: 700;
+}
+
+.ms_3 {
+  margin-left: 1rem;
+}
+
+.icon_lg {
+  height: 3rem;
+  line-height: 3rem;
+  width: 3rem;
+}
+
+.icon_shape {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.text_primary {
+  color: rgb(117, 79, 254);
+}
+
+.bg_light_primary {
+  background: rgb(227, 220, 255);
+}
+
+.rounded_corner {
+  border-radius: 50%;
+}
+
+.fs_3 {
+  font-size: 1.25rem;
+}
+
+.border_start {
+  @media (min-width: 768px) {
+    border-left: 1px solid #ecebf1 !important;
+  }
+}
+
+.text_danger {
+  color: rgb(229, 63, 60);
+}
+
+.bg_light_danger {
+  background: rgb(250, 217, 216);
+}
+
+.text_center {
+  color: rgb(25, 203, 152);
+}
+
+.bg_light_success {
+  background: rgb(209, 245, 234);
+}
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+div::-webkit-scrollbar{
+
 }

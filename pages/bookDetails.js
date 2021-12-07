@@ -1,7 +1,7 @@
 import useSWR from 'swr';
-import BooksTable from '../sections/booksTable';
 import Layout from '../sections/layout';
 import TitleSection from '../sections/titleSection';
+import BookInfo from './bookInfo';
 
 export default function Books() {
   //   const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -17,6 +17,8 @@ export default function Books() {
         path="/books"
         icon="ri-arrow-left-s-line"
       />
+
+      <BookInfo />
     </Layout>
   );
 }
