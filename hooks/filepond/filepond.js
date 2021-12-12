@@ -1,5 +1,7 @@
+import React, { useState } from 'react';
+import FilePondPluginFileEncode from 'filepond-plugin-file-encode';
 // Import React FilePond
-import { FilePond, File, registerPlugin } from 'react-filepond';
+import { FilePond, registerPlugin } from 'react-filepond';
 
 // Import FilePond styles
 import 'filepond/dist/filepond.min.css';
@@ -10,24 +12,20 @@ import 'filepond/dist/filepond.min.css';
 import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation';
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css';
-import { useState } from 'react';
 
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
-// Our app
-export default function FilePondHook() {
-  const [files, setFiles] = useState([]);
+export default function FilePondHook({ files, setFiles }) {
+  registerPlugin(FilePondPluginFileEncode);
   return (
     <div className="App">
       <FilePond
         files={files}
+        allowReorder={true}
+        allowMultiple={false}
         onupdatefiles={setFiles}
-        allowMultiple={true}
-        maxFiles={3}
-        server="/api"
-        name="files"
-        labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
+        labelIdle='Drag &amp; Drop your Image or <span class="filepond--label-action">Browse</span>'
       />
     </div>
   );

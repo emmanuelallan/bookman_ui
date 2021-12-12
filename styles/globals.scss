@@ -187,6 +187,13 @@ tr {
   }
 }
 
+.col_6 {
+  @media (min-width: 768px) {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
 .border {
   display: flex;
   border-bottom: 1px solid #ecebf1;
@@ -549,10 +556,9 @@ small {
   background: rgb(209, 245, 234);
 }
 
-.capitalize{
+.capitalize {
   text-transform: capitalize;
 }
 
-div::-webkit-scrollbar{
-
+div::-webkit-scrollbar {
 }
