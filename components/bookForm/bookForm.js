@@ -111,7 +111,7 @@ export default function BookForm({
         type="text"
         placeholder="e.g 4.8"
         message="Amazon ratings average"
-        name="average"
+        name="r_average"
         value={formData.r_average}
         onChange={handleChange}
       />
@@ -122,7 +122,7 @@ export default function BookForm({
         type="text"
         placeholder="e.g 11587"
         message="Amazon ratings number of people"
-        name="global"
+        name="r_global"
         value={formData.r_global}
         onChange={handleChange}
       />
@@ -174,6 +174,7 @@ export default function BookForm({
         min="0"
         placeholder="Price for the pdf version"
         message={error.pdf_price}
+        messageError={true}
         name="pdf_price"
         value={formData.pdf_price}
         onChange={handleChange}

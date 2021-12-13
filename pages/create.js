@@ -36,94 +36,50 @@ export default function Create() {
     image: '',
     pdf: '',
     pdf_price: '',
+    status: false,
   });
 
-  //   form submit
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    const {
-      title,
-      subTitle,
-      description,
-      price,
-      quantity,
-      author,
-      pages,
-      pdf_price,
-    } = formData;
-    handleFormValidation(
-      title,
-      subTitle,
-      description,
-      price,
-      quantity,
-      author,
-      pages,
-      pdf_price
-    );
-
-    if (error.all.length === 0 && error.image.length === 0) {
-      console.log(formData);
-    }
-  }
-
-  //   handle post request
-  //   async function rawRes() {
-  //     await fetch('http://localhost:5000/api/v1/books', {
-  //       method: 'POST',
-  //       header: {
-  //         Accept: 'application/json',
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(formData),
-  //     }).then((res) => {
-  //       res.json();
-  //     });
-  //   }
-
-  //   handle input event
-  function handleChange(e) {
-    const { name, value } = e.target;
-    setFormData(() => ({
-      ...formData,
-      [name]: value,
-    }));
-  }
-
   //   handle form validation
-  function handleFormValidation(
+  function checkEmpty(
     title,
     subTitle,
     description,
     price,
     quantity,
     author,
-    pages,
-    pdf_price
+    pages
   ) {
-    //   check if empty
     if (
-      !(
-        title &&
-        subTitle &&
-        description &&
-        price &&
-        quantity &&
-        author &&
-        pages
-      )
+      title &&
+      subTitle &&
+      description &&
+      price &&
+      quantity &&
+      author &&
+      pages
     ) {
       setError({
         ...error,
-        all: '* cannot be empty',
+        all: '',
+      });
+    } else {
+      setError({
+        ...error,
+        all: '* Cannot be empty',
       });
     }
+  }
 
-    // check image
+  function checkEmptyImagePdf(pdf_price) {
     if (Object.keys(coverImage).length === 0) {
       setError({
         ...error,
         image: 'Cover image required',
+      });
+    } else {
+      setError({
+        ...error,
+        image: '',
       });
     }
 
@@ -134,15 +90,73 @@ export default function Create() {
           ...error,
           pdf: 'PDF file is required for price to be set',
         });
-      }
-    } else {
-      if (!pdf_price) {
+      } else {
         setError({
           ...error,
-          pdf_price: 'Pdf price required',
+          pdf: '',
+        });
+      }
+    } else {
+      if (pdf_price) {
+        setError({
+          ...error,
+          pdf_price: '',
+        });
+      } else {
+        setError({
+          ...error,
+          pdf_price: 'PDF price required',
         });
       }
     }
+  }
+
+  //   form submit
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    setFormData(() => ({
+      ...formData,
+      coverImage: coverImage,
+      pdf: pdf,
+    }));
+    // const {
+    //   title,
+    //   subTitle,
+    //   description,
+    //   price,
+    //   quantity,
+    //   author,
+    //   pages,
+    //   pdf_price,
+    // } = formData;
+    // checkEmpty(title, subTitle, description, price, quantity, author, pages);
+    // checkEmptyImagePdf(pdf_price);
+
+    rawRes();
+  }
+
+  // handle post request
+  async function rawRes() {
+    await fetch('http://localhost:5000/api/v1/books', {
+      method: 'POST',
+      header: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    }).then((res) => {
+      // res.json();
+      console.log(res.json());
+    });
+  }
+
+  //   handle input event
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setFormData(() => ({
+      ...formData,
+      [name]: value,
+    }));
   }
 
   return (

@@ -6,15 +6,16 @@ export default function InputField({
   type,
   placeholder,
   message,
-    min,
-    name,
-    value,
-    onChange
+  min,
+  name,
+  value,
+  onChange,
+  messageError,
 }) {
   return (
     <div className={`${styles.mb_mt} ${styles[size]}`}>
       <label className="label">{label}</label>
-        <span style={{color: 'red', marginLeft: 5}}>*</span>
+      <span style={{ color: 'red', marginLeft: 5 }}>*</span>
       <input
         type={type}
         placeholder={placeholder}
@@ -24,7 +25,9 @@ export default function InputField({
         value={value}
         onChange={onChange}
       />
-      <small className={`${styles.message} ${styles.error}`}>{message}</small>
+      <small className={`${styles.message} ${messageError && styles.error}`}>
+        {message}
+      </small>
     </div>
   );
 }
