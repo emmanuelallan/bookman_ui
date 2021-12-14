@@ -157,6 +157,35 @@ tr {
   width: 100%;
 }
 
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  width: 100%;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+}
+
+.d_flex {
+  display: flex;
+  flex-direction: column;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -410,6 +439,10 @@ tr {
   padding: 1.5rem;
 }
 
+.p_6 {
+  padding: 2.5rem !important;
+}
+
 .text_dark {
   color: rgb(24, 17, 60);
 }
@@ -452,14 +485,44 @@ small {
   }
 }
 
+.py_8 {
+  padding-bottom: 3.5rem !important;
+  padding-top: 3.5rem !important;
+}
+
+.col_5 {
+  @media (min-width: 768px) {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+
+  @media (min-width: 992px) {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+
+  @media (min-width: 1200px) {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
 .mb_4 {
   margin-bottom: 1.5rem;
+}
+
+.mb_1 {
+  margin-bottom: 0.25rem;
 }
 
 .d_between {
   display: flex;
   justify-content: space-between;
   text-align: center;
+}
+
+.d_grid {
+  display: grid;
 }
 
 .text_left {
@@ -561,4 +624,31 @@ small {
 }
 
 div::-webkit-scrollbar {
+}
+
+.btn_submit {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: #5c5776;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.6;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+}
+
+.btn_primary {
+  background-color: #754ffe;
+  border-color: #754ffe;
+  color: #fff;
 }
