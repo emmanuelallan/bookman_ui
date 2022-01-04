@@ -10,18 +10,24 @@ export default function Create() {
     subTitle: '',
     description: '',
     price: '',
-    quantity: '',
-    coverImage: null,
+    url: '',
     author: '',
-    ISBN: '',
-    pages: '',
+    imgUrl: '',
+    quantity: '',
     pubDate: '',
+    pages: '',
     language: '',
-    pdf: null,
-    pdf_available: false,
-    pdf_price: '',
-    r_average: '',
-    r_global: '',
+    ISBN: '',
+    pdf: {
+      fileSize: '',
+      src: '',
+      pdfPrice: '',
+      available: false
+    },
+    rating: {
+      average: '',
+      global: ''
+    }
   });
 
   //   to handle cover image hook
@@ -132,21 +138,19 @@ export default function Create() {
     // checkEmpty(title, subTitle, description, price, quantity, author, pages);
     // checkEmptyImagePdf(pdf_price);
 
-    rawRes();
+    rawRes().then(r => console.log(r));
   }
 
   // handle post request
   async function rawRes() {
     await fetch('http://localhost:5000/api/v1/books', {
       method: 'POST',
-      header: {
-        Accept: 'application/json',
+      headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
     }).then((res) => {
-      // res.json();
-      console.log(res.json());
+      res.json();
     });
   }
 
