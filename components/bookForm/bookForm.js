@@ -51,6 +51,7 @@ export default function BookForm({
           value={formData.description}
           onChange={handleChange}
         />
+        coverImage
       </div>
 
       <InputField
@@ -111,8 +112,8 @@ export default function BookForm({
         type="text"
         placeholder="e.g 4.8"
         message="Amazon ratings average"
-        name="r_average"
-        value={formData.r_average}
+        name="average"
+        value={formData.average}
         onChange={handleChange}
       />
 
@@ -122,8 +123,8 @@ export default function BookForm({
         type="text"
         placeholder="e.g 11587"
         message="Amazon ratings number of people"
-        name="r_global"
-        value={formData.r_global}
+        name="global"
+        value={formData.global}
         onChange={handleChange}
       />
 
@@ -175,8 +176,8 @@ export default function BookForm({
         placeholder="Price for the pdf version"
         message={error.pdf_price}
         messageError={true}
-        name="pdf_price"
-        value={formData.pdf_price}
+        name="pdfPrice"
+        value={formData.pdfPrice}
         onChange={handleChange}
       />
 

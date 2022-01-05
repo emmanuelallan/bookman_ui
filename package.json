@@ -8,7 +8,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "aws-sdk": "^2.1044.0",
+    "aws-sdk": "^2.1050.0",
+    "dotenv": "^10.0.0",
     "filepond": "^4.30.3",
     "filepond-plugin-file-encode": "^2.1.10",
     "filepond-plugin-image-exif-orientation": "^1.0.11",
@@ -21,7 +22,8 @@
     "react-filepond": "^7.1.1",
     "remixicon": "^2.5.0",
     "sass": "^1.44.0",
-    "swr": "^1.1.0"
+    "swr": "^1.1.0",
+    "util": "^0.12.4"
   },
   "devDependencies": {
     "eslint": "7.32.0",
