@@ -7,7 +7,7 @@ const Dashboard = () => {
       <Navbar />
       <div className="flex flex-1 pt-20">
         <SideBar />
-        <main className="w-full lg:ps-72 xl:ps-76">
+        <main className="w-full lg:pl-52 xl:pl-56">
           <div className="p-5 md:p-8 h-full"></div>
         </main>
       </div>
