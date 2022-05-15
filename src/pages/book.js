@@ -12,9 +12,7 @@ const Book = () => {
             <div className="p-5 md:p-8 bg-light shadow rounded flex flex-col mb-8">
               <div className="w-full flex flex-col md:flex-row items-center">
                 <div className="md:w-1/4 mb-4 md:mb-0">
-                  <h1 className="text-lg font-semibold text-heading">
-                    Products
-                  </h1>
+                  <h1 className="text-lg font-semibold text-heading">Books</h1>
                 </div>
                 <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center">
                   <div className="w-full flex items-center">
