@@ -24,7 +24,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center space-s-8">
           <Link
-            to="/"
+            to="/createBook"
             className="inline-flex items-center justify-center flex-shrink-0 font-semibold leading-none rounded outline-none transition duration-300 ease-in-out focus:outline-none focus:shadow bg-accent text-light border border-transparent hover:bg-accentH px-3 py-0 h-9 text-sm h-10 ms-4 md:ms-6 ms-4 md:ms-6"
           >
             <BsJournalPlus /> <span className="ml-2">Add Book</span>

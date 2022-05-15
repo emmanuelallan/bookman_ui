@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .select {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid rgb(209, 213, 219);
+  }
+
+  .select-inner {
+    -webkit-box-align: center;
+    align-items: center;
+    display: grid;
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    padding: 2px 8px 2px 16px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .select-even-inner {
+    color: rgba(107, 114, 128, 0.7);
+    grid-area: 1 / 1 / 2 / 3;
+    margin-left: 2px;
+    margin-right: 2px;
+    box-sizing: border-box;
+    font-size: 0.875rem;
+  }
+
+  .option-wrapper {
+    margin: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    visibility: visible;
+    color: rgb(51, 51, 51);
+    flex: 1 1 auto;
+    display: inline-grid;
+    grid-area: 1 / 1 / 2 / 3;
+    grid-template-columns: 0px min-content;
+    box-sizing: border-box;
+  }
+}
