@@ -30,17 +30,17 @@ export default class BookmanAPI {
         'Content-Type': 'application/json; charset=utf-8',
       },
       body: JSON.stringify(storeInfo),
-    })
-      .then((res) => {
-        const data = res.json();
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
 
-        if (data) {
-          return data;
-        }
+      if (res.status === 404) {
+        return Promise.reject('User not Found!');
+      }
 
-        return [];
-      })
-      .catch((e) => e);
+      return [];
+    });
   };
 
   static getToken = async () => {

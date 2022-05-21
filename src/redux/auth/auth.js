@@ -4,6 +4,7 @@ import BookmanAPI from '../../api/bookmanAPI';
 const CREATE_STORE = 'CREATE_STORE';
 const LOGIN_STORE = 'LOGIN_STORE';
 const AUTH_STORE = 'AUTH_STORE';
+const CATCH_ERROR = 'CATCH_ERROR';
 
 // reducer
 export default function reducer(state = [], action) {
@@ -16,6 +17,9 @@ export default function reducer(state = [], action) {
 
     case AUTH_STORE:
       return action.token;
+
+    case CATCH_ERROR:
+      return action.error;
 
     default:
       return state;
@@ -37,14 +41,21 @@ export function registerStore(storeInfo) {
 
 export function loginStore(storeInfo) {
   return (dispatch) =>
-    BookmanAPI.loginStore(storeInfo).then((data) => {
-      if (data) {
+    BookmanAPI.loginStore(storeInfo)
+      .then((data) => {
+        if (data) {
+          dispatch({
+            type: LOGIN_STORE,
+            user: data,
+          });
+        }
+      })
+      .catch((e) => {
         dispatch({
-          type: LOGIN_STORE,
-          user: data,
+          type: CATCH_ERROR,
+          error: { error: e },
         });
-      }
-    });
+      });
 }
 
 export function authRequests() {
