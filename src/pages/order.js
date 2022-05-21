@@ -16,12 +16,9 @@ const Order = () => {
                 <h1 className="text-lg font-semibold text-heading">Orders</h1>
               </div>
               <div className="w-full md:w-1/2 flex flex-col md:flex-row items-center ms-auto">
-                <form
-                  noValidate
-                  className='class="w-full flex items-center relative"'
-                >
+                <form noValidate className="w-full flex items-center relative">
                   <Label title="Search" name="search" />
-                  <button class="absolute p-2 outline-none start-1 focus:outline-none active:outline-none text-body">
+                  <button className="absolute p-2 outline-none start-1 focus:outline-none active:outline-none text-body">
                     <BsSearch />
                   </button>
                   <input

@@ -20,7 +20,7 @@ const Category = () => {
                   <div className="w-full flex items-center">
                     <form
                       noValidate
-                      className='class="w-full flex items-center relative'
+                      className="w-full flex items-center relative"
                     ></form>
                   </div>
                 </div>
