@@ -3,6 +3,7 @@ export default class BookmanAPI {
 
   // create a store
   static createStore = async (storeInfo) => {
+    let data = {};
     await fetch(`${this.BASE_URL}/auth/register`, {
       method: 'POST',
       headers: {
@@ -11,15 +12,13 @@ export default class BookmanAPI {
       body: JSON.stringify(storeInfo),
     })
       .then((res) => {
-        const data = res.json();
-
-        if (data) {
-          return data;
+        if (res.ok) {
+          data = res.json();
         }
-
-        return [];
       })
       .catch((e) => e);
+
+    return data;
   };
 
   // login store

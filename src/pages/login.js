@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import validator from 'validator';
 import { useState } from 'react';
@@ -10,6 +11,7 @@ import Label from '../components/form/label';
 import Button from '../components/button';
 
 const Login = () => {
+  const location = useLocation();
   const [error, setError] = useState({
     email: '',
     password: '',
@@ -93,6 +95,12 @@ const Login = () => {
         {user.error && (
           <p className="text-center bg-red-50 rounded capitalize py-2 text-red-500 my-5">
             {user.error}
+          </p>
+        )}
+
+        {location.state && (
+          <p className="text-center bg-green-50 rounded capitalize py-2 text-accent my-5">
+            {location.state}
           </p>
         )}
         <form noValidate onSubmit={handleSubmit}>

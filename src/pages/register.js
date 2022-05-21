@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import validator from 'validator';
 import { useState } from 'react';
@@ -10,6 +11,7 @@ import Label from '../components/form/label';
 import Button from '../components/button';
 
 const Register = () => {
+  let navigate = useNavigate();
   const [error, setError] = useState({
     storeName: '',
     email: '',
@@ -81,7 +83,7 @@ const Register = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // check if error
@@ -89,7 +91,7 @@ const Register = () => {
       // handle form
       const { storeName, email, password } = e.target.elements;
 
-      dispatch(
+      await dispatch(
         registerStore({
           storeName: storeName.value,
           email: email.value,
@@ -98,7 +100,11 @@ const Register = () => {
         })
       );
 
-      e.target.elements.password = '';
+      e.target.elements.password.value = '';
+      e.target.elements.storeName.value = '';
+      e.target.elements.email.value = '';
+
+      navigate('/', { replace: true, user });
     }
   };
   return (
