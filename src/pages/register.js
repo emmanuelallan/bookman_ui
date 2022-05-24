@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import validator from 'validator';
 import { useState } from 'react';
-import { registerStore } from '../redux/auth/auth';
-import isEqual from 'lodash/isEqual';
-import logo from '../assets/img/logo.svg';
 import Input from '../components/form/input';
 import Label from '../components/form/label';
 import Button from '../components/button';
+import validator from 'validator';
+import { useDispatch, useSelector } from 'react-redux';
+import { registerStore } from '../app/features/auth/authSlice';
+import isEqual from 'lodash/isEqual';
+import logo from '../assets/img/logo.svg';
 
 const Register = () => {
   let navigate = useNavigate();

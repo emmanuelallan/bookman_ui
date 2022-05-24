@@ -3,7 +3,6 @@ export default class BookmanAPI {
 
   // create a store
   static createStore = async (storeInfo) => {
-    let data = {};
     await fetch(`${this.BASE_URL}/auth/register`, {
       method: 'POST',
       headers: {
@@ -13,12 +12,10 @@ export default class BookmanAPI {
     })
       .then((res) => {
         if (res.ok) {
-          data = res.json();
+          return res.json();
         }
       })
-      .catch((e) => e);
-
-    return data;
+      .catch((e) => console.log(e));
   };
 
   // login store
@@ -29,17 +26,15 @@ export default class BookmanAPI {
         'Content-Type': 'application/json; charset=utf-8',
       },
       body: JSON.stringify(storeInfo),
-    }).then((res) => {
-      if (res.ok) {
-        return res.json();
-      }
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json().then((data) => data);
+        }
 
-      if (res.status === 404) {
-        return Promise.reject('User not Found!');
-      }
-
-      return [];
-    });
+        return [];
+      })
+      .catch((e) => e);
   };
 
   static getToken = async () => {

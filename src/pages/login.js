@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import validator from 'validator';
 import { useState } from 'react';
-import { loginStore } from '../redux/auth/auth';
+import { loginStore } from '../app/features/auth/authSlice';
 import isEqual from 'lodash/isEqual';
 import logo from '../assets/img/logo.svg';
 import Input from '../components/form/input';
@@ -80,9 +80,11 @@ const Login = () => {
         })
       );
 
-      e.target.elements.password = '';
+      e.target.elements.email.value = '';
+      e.target.elements.password.value = '';
     }
   };
+
   return (
     <main className="flex items-center justify-center h-screen bg-light sm:bg-gray-100">
       <div className="m-auto max-w-md w-full bg-light sm:shadow p-5 sm:p-8 rounded-md">
@@ -92,15 +94,15 @@ const Login = () => {
         <h3 className="text-center text-base italic text-body mb-6 mt-4">
           Login to admin
         </h3>
-        {user.error && (
+        {user.user.message && (
           <p className="text-center bg-red-50 rounded capitalize py-2 text-red-500 my-5">
-            {user.error}
+            {user.user.message}
           </p>
         )}
 
         {location.state && (
           <p className="text-center bg-green-50 rounded capitalize py-2 text-accent my-5">
-            {location.state}
+            {location.state.user.message}
           </p>
         )}
         <form noValidate onSubmit={handleSubmit}>
