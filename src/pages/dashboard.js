@@ -16,7 +16,7 @@ const Dashboard = () => {
               <h1 className="text-2xl sm:text-4xl font-bold">Dashboard</h1>
             </div>
             <div className="w-full grid justify-items-center gap-y-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              <div className="w-3/4 sm:w-5/6 bg-white shadow-md rounded-3xl p-8 hover:scale-110 hover:bg-accent hover:text-white transition ease-in-out delay-200">
+              <div className="w-3/4 sm:w-5/6 bg-white shadow-md rounded-3xl p-8  transition ease-in-out delay-200">
                 <div className="flex flex-col gap-y-10">
                   <div className="p-4 rounded-lg max-w-fit bg-gray-100">
                     <BsCollection className="text-4xl text-black" />
@@ -27,7 +27,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-3/4 sm:w-5/6 bg-white shadow-md rounded-3xl p-8 hover:scale-110 hover:bg-accent hover:text-white transition ease-in-out delay-200">
+              <div className="w-3/4 sm:w-5/6 bg-white shadow-md rounded-3xl p-8  transition ease-in-out delay-200">
                 <div className="flex flex-col gap-y-10">
                   <div className="p-4 rounded-lg max-w-fit bg-gray-100">
                     <BsBook className="text-4xl text-black" />
@@ -38,7 +38,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-3/4 sm:w-5/6 bg-white shadow-md rounded-3xl p-8 hover:scale-110 hover:bg-accent hover:text-white transition ease-in-out delay-200">
+              <div className="w-3/4 sm:w-5/6 bg-white shadow-md rounded-3xl p-8  transition ease-in-out delay-200">
                 <div className="flex flex-col gap-y-10">
                   <div className="p-4 rounded-lg max-w-fit bg-gray-100">
                     <BsMailbox className="text-4xl text-black" />
@@ -49,7 +49,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-3/4 sm:w-5/6 bg-white shadow-md rounded-3xl p-8 hover:scale-110 hover:bg-accent hover:text-white transition ease-in-out delay-200">
+              <div className="w-3/4 sm:w-5/6 bg-white shadow-md rounded-3xl p-8  transition ease-in-out delay-200">
                 <div className="flex flex-col gap-y-10">
                   <div className="p-4 rounded-lg max-w-fit bg-gray-100">
                     <GrMoney className="text-4xl text-black" />
@@ -64,8 +64,8 @@ const Dashboard = () => {
             {/* Data Table */}
             <div className=" overflow-hidden mt-16 sm:mt-40 lg:mt-52">
               <div className="bg-white px-4 py-5 sm:px-6 flex justify-between items-center sm:justify-start sm:gap-12">
-                <h3 className="text-2xl sm:text-4xl font-bold">Top trending books</h3>
-                <FiTrendingUp className="text-2xl sm:text-4xl text-black" />
+                <h3 className="text-xl sm:text-2xl lg:text-4xl font-bold">Top trending books</h3>
+                <FiTrendingUp className="text-xl sm:text-2xl lg:text-4xl text-black" />
               </div>
               <div className="border-t mt-10 border-gray-200">
                 <dl>
@@ -74,19 +74,19 @@ const Dashboard = () => {
                     <dd className="text-xl lg:text-2xl font-bold">Total Sold</dd>
                   </div>
                   <div className="px-4 py-5 grid grid-cols-2 md:grid-cols-3 gap-4 px-6 odd:bg-white even:bg-gray-50">
-                    <dt className="text-base lg:text-xl md:col-span-2">Atomic habits</dt>
-                    <dd className="text-base lg:text-xl">40</dd>
+                    <dt className="text-sm sm:text-base lg:text-xl md:col-span-2">Atomic habits</dt>
+                    <dd className="text-sm sm:text-base lg:text-xl">40</dd>
                   </div>
                   <div className="px-4 py-5 grid grid-cols-2 md:grid-cols-3 gap-4 px-6 odd:bg-white even:bg-gray-50">
-                    <dt className="text-base lg:text-xl md:col-span-2">Give and wake</dt>
+                    <dt className="text-sm sm:text-base lg:text-xl md:col-span-2">Give and wake</dt>
                     <dd className="text-base lg:text-xl">20</dd>
                   </div>
                   <div className="px-4 py-5 grid grid-cols-2 md:grid-cols-3 gap-4 px-6 odd:bg-white even:bg-gray-50">
-                    <dt className="text-base lg:text-xl md:col-span-2">Start with why</dt>
+                    <dt className="text-sm sm:text-base lg:text-xl md:col-span-2">Start with why</dt>
                     <dd className="text-base lg:text-xl">20</dd>
                   </div>
                   <div className="px-4 py-5 grid grid-cols-2 md:grid-cols-3 gap-4 px-6 odd:bg-white even:bg-gray-50">
-                    <dt className="text-base lg:text-xl md:col-span-2">Shoe dog</dt>
+                    <dt className="text-sm sm:text-base lg:text-xl md:col-span-2">Shoe dog</dt>
                     <dd className="text-base lg:text-xl">20</dd>
                   </div>
                 </dl>
