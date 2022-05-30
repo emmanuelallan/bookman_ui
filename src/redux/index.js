@@ -1,11 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './auth/auth';
-import editReducer from './crud/edit'
+import updateBookReducer from './crud/update';
+import deleteBookReducer from './crud/delete';
+import getBookReducer from './crud/read';
+import createBookReducer from './crud/create'
 
 const store = configureStore({
   reducer: {
     auth: authReducer,
-    edit: editReducer
+    update: updateBookReducer,
+    delete: deleteBookReducer,
+    get: getBookReducer,
+    create: createBookReducer
   }
 });
 
