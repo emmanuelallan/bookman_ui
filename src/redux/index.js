@@ -8,7 +8,7 @@ import createBookReducer from './crud/create'
 
 const store = configureStore({
   reducer: {
-    auth: authReducer,
+    user: authReducer,
     update: updateBookReducer,
     delete: deleteBookReducer,
     get: getBookReducer,
