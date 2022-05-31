@@ -2,10 +2,10 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const BASE_URL = 'https://bookman-api.herokuapp.com/api/v1/book/';
 
-export const getBook = createAsyncThunk(
-  'GET_BOOK',
-  async (bookId, token) => {
-    const response = await fetch(`${BASE_URL}/get/${bookId}`, {
+export const getAllBooks = createAsyncThunk(
+  'GET_ALL_BOOKS',
+  async (token) => {
+    const response = await fetch(`${BASE_URL}/list`, {
       headers: {
         'Authorization': `Bearer JWT ${token}`,
         'Content-type': 'application/json'
@@ -17,39 +17,39 @@ export const getBook = createAsyncThunk(
 )
 
 
-export const getBookSlice = createSlice({
+export const getAllBooksSlice = createSlice({
   name: 'bookman/v1',
   initialState: {
-    message: '',
+    books: [],
     loading: false,
     error: false
   },
   reducers: {},
   extraReducers: {
-    [getBook.pending]: (state) => {
+    [getAllBooks.pending]: (state) => {
       const newState = {
         ...state,
         loading: true
       }
       return newState
     },
-    [getBook.fulfilled]: (state, action) => {
-      const newState = {
-        ...state,
-        message: action.payload
-      }
-      return newState
-    },
-    [getBook.rejected]: (state, action) => {
+    [getAllBooks.fulfilled]: (state, action) => {
       const newState = {
         ...state,
         loading: false,
-        error: true,
-        message: action.payload
+        books: action.payload
+      }
+      return newState
+    },
+    [getAllBooks.rejected]: (state) => {
+      const newState = {
+        ...state,
+        loading: false,
+        error: true
       }
       return newState
     }
   }
 })
 
-export default getBookSlice.reducer
+export default getAllBooksSlice.reducer
