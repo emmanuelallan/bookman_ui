@@ -38,6 +38,7 @@ export const updateBookSlice = createSlice({
     [updateBook.fulfilled]: (state, action) => {
       const newState = {
         ...state,
+        loading: false,
         message: action.payload
       }
       return newState

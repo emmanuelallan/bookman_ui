@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const BASE_URL = 'https://bookman-api.herokuapp.com/api/v1/book/';
 
 export const createBook = createAsyncThunk(
-  'EDIT_BOOK',
+  'NEW_BOOK',
   async (body, token) => {
     const response = await fetch(`${BASE_URL}/new`, {
       method: 'POST',
@@ -38,6 +38,7 @@ export const createBookSlice = createSlice({
     [createBook.fulfilled]: (state, action) => {
       const newState = {
         ...state,
+        loading: false,
         message: action.payload
       }
       return newState

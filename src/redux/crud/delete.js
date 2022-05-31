@@ -37,6 +37,7 @@ export const deleteBookSlice = createSlice({
     [deleteBook.fulfilled]: (state, action) => {
       const newState = {
         ...state,
+        loading: false,
         message: action.payload
       }
       return newState
