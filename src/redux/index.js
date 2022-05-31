@@ -1,16 +1,20 @@
-import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
 import authReducer from './auth/auth';
-
-const rootReducer = combineReducers({
-  user: authReducer,
-});
+import updateBookReducer from './crud/update';
+import deleteBookReducer from './crud/delete';
+import getBookReducer from './crud/readSingle';
+import getAllBooksReducer from './crud/readAll';
+import createBookReducer from './crud/create'
 
 const store = configureStore({
-  reducer: rootReducer,
-  middleware: [logger, thunk],
+  reducer: {
+    user: authReducer,
+    update: updateBookReducer,
+    delete: deleteBookReducer,
+    get: getBookReducer,
+    create: createBookReducer,
+    getAll: getAllBooksReducer
+  }
 });
 
 export default store;
