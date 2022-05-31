@@ -31,7 +31,7 @@ export default function EditBook() {
                 <div className="p-5 md:p-8 bg-light shadow rounded w-full sm:w-8/12 md:w-2/3">
                   <div className="mb-5">
                     <Label name="title" title="Book Name" />
-                    <Input type="text" name="title" />
+                    <Input type="text" name="title" value="Atomic Habits" />
                   </div>
                   <div className="mb-5">
                     <Label name="subTitle" title="Sub Title" />
@@ -39,7 +39,7 @@ export default function EditBook() {
                   </div>
                   <div className="mb-5">
                     <Label name="author" title="Author" />
-                    <Input type="text" name="author" />
+                    <Input type="text" name="author" value="James Clear" />
                   </div>
                   <div className="mb-5">
                     <Label name="category" title="Category" />
@@ -51,11 +51,11 @@ export default function EditBook() {
                   </div>
                   <div className="mb-5">
                     <Label name="price" title="Price" />
-                    <Input type="number" name="price" />
+                    <Input type="number" name="price" value={1000} />
                   </div>
                   <div className="mb-5">
                     <Label name="stock" title="Stock" />
-                    <Input type="number" name="stock" />
+                    <Input type="number" name="stock" value={346} />
                   </div>
                   <div className="mb-5">
                     <label className="block text-body-dark font-semibold text-sm leading-none mb-3">
